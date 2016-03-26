@@ -32,19 +32,19 @@ Install by running::
 Configuration
 =============
 
-After installing the extension playback defaults can be configured in ``mopidy.conf`` config file (each setting accepts values **true** or **false**, all settings are optional)::
+After installing the extension playback defaults can be configured in ``mopidy.conf`` config file (each setting accepts values *true* or *false*, all settings are optional)::
 
     [playbackdefaults]
-    # To set **Random** option (in this case enable it)
+    # To set Random option (in this case enable it)
     default_random = true
 
-    # To set **Repeat** option (in this case enable it)
+    # To set Repeat option (in this case enable it)
     default_repeat = true
 
-    # To set **Consume** option (in this case ensure it is disabled)
+    # To set Consume option (in this case ensure it is disabled)
     default_consume = false
 
-    # To set **Single** option (in this case ensure it is disabled)
+    # To set Single option (in this case ensure it is disabled)
     default_single = false
 
 
