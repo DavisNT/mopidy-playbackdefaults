@@ -35,7 +35,7 @@ setup(
     ],
     entry_points={
         'mopidy.ext': [
-            'playbackdefaults = mopidy_playbackdefaults:PDExtension',
+            'playbackdefaults = mopidy_playbackdefaults:PlaybackDefaultsExtension',
         ],
     },
     classifiers=[
