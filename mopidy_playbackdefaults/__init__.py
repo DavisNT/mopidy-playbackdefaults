@@ -4,10 +4,12 @@ import os
 
 from mopidy import config, ext
 
+import pykka
+
 __version__ = '0.1.0'
 
 
-class PDExtension(ext.Extension):
+class PlaybackDefaultsExtension(ext.Extension):
 
     dist_name = 'Mopidy-PlaybackDefaults'
     ext_name = 'playbackdefaults'
@@ -18,7 +20,7 @@ class PDExtension(ext.Extension):
         return config.read(conf_file)
 
     def get_config_schema(self):
-        schema = super(PDExtension, self).get_config_schema()
+        schema = super(PlaybackDefaultsExtension, self).get_config_schema()
         schema['default_random'] = config.Boolean(optional=True)
         schema['default_repeat'] = config.Boolean(optional=True)
         schema['default_consume'] = config.Boolean(optional=True)
@@ -26,17 +28,18 @@ class PDExtension(ext.Extension):
         return schema
 
     def setup(self, registry):
-        registry.add(
-            'http:app', {'name': self.ext_name, 'factory': self.factory})
+        registry.add('frontend', PlaybackDefaultsFrontend)
 
-    def factory(self, config, core):
-        if type(config[PDExtension.ext_name]['default_random']) is bool:
-            core.tracklist.random = config[PDExtension.ext_name]['default_random']
-        if type(config[PDExtension.ext_name]['default_repeat']) is bool:
-            core.tracklist.repeat = config[PDExtension.ext_name]['default_repeat']
-        if type(config[PDExtension.ext_name]['default_consume']) is bool:
-            core.tracklist.consume = config[PDExtension.ext_name]['default_consume']
-        if type(config[PDExtension.ext_name]['default_single']) is bool:
-            core.tracklist.single = config[PDExtension.ext_name]['default_single']
 
-        return []
+class PlaybackDefaultsFrontend(pykka.ThreadingActor):
+    def __init__(self, config, core):
+        super(PlaybackDefaultsFrontend, self).__init__()
+
+        if type(config[PlaybackDefaultsExtension.ext_name]['default_random']) is bool:
+            core.tracklist.random = config[PlaybackDefaultsExtension.ext_name]['default_random']
+        if type(config[PlaybackDefaultsExtension.ext_name]['default_repeat']) is bool:
+            core.tracklist.repeat = config[PlaybackDefaultsExtension.ext_name]['default_repeat']
+        if type(config[PlaybackDefaultsExtension.ext_name]['default_consume']) is bool:
+            core.tracklist.consume = config[PlaybackDefaultsExtension.ext_name]['default_consume']
+        if type(config[PlaybackDefaultsExtension.ext_name]['default_single']) is bool:
+            core.tracklist.single = config[PlaybackDefaultsExtension.ext_name]['default_single']

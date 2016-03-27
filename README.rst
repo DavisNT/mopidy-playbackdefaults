@@ -68,6 +68,7 @@ dev
 ----------------------------------------
 
 - Changed branching model to `git-flow <http://nvie.com/posts/a-successful-git-branching-model/>`_.
+- Changed extension type from ``http:app`` to ``frontend``.
 
 v0.1.0
 ----------------------------------------
