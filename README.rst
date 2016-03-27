@@ -58,11 +58,16 @@ Project resources
 
 - `Source code <https://github.com/DavisNT/mopidy-playbackdefaults>`_
 - `Issue tracker <https://github.com/DavisNT/mopidy-playbackdefaults/issues>`_
-- `Development branch tarball <https://github.com/DavisNT/mopidy-playbackdefaults/archive/master.tar.gz#egg=Mopidy-PlaybackDefaults-dev>`_
+- `Development branch tarball <https://github.com/DavisNT/mopidy-playbackdefaults/archive/develop.tar.gz#egg=Mopidy-PlaybackDefaults-dev>`_
 
 
 Changelog
 =========
+
+dev
+----------------------------------------
+
+- Changed branching model to `git-flow <http://nvie.com/posts/a-successful-git-branching-model/>`_.
 
 v0.1.0
 ----------------------------------------
