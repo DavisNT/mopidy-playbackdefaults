@@ -1,9 +1,10 @@
 from __future__ import unicode_literals
 
 import os
-import pykka
 
 from mopidy import config, ext
+
+import pykka
 
 __version__ = '0.1.0'
 
@@ -28,6 +29,7 @@ class PlaybackDefaultsExtension(ext.Extension):
 
     def setup(self, registry):
         registry.add('frontend', PlaybackDefaultsFrontend)
+
 
 class PlaybackDefaultsFrontend(pykka.ThreadingActor):
     def __init__(self, config, core):
