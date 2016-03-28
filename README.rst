@@ -18,7 +18,7 @@ Mopidy-PlaybackDefaults
     :target: https://coveralls.io/r/DavisNT/mopidy-playbackdefaults
     :alt: Coveralls test coverage
 
-Mopidy extension for configurable default playback settings.
+`Mopidy <http://www.mopidy.com/>`_ extension for configurable default playback settings.
 
 
 Installation
@@ -64,7 +64,7 @@ Project resources
 Changelog
 =========
 
-dev
+v0.1.1
 ----------------------------------------
 
 - Changed branching model to `git-flow <http://nvie.com/posts/a-successful-git-branching-model/>`_.
