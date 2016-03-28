@@ -6,7 +6,7 @@ from mopidy import config, ext
 
 import pykka
 
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 
 
 class PlaybackDefaultsExtension(ext.Extension):
