@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 import re
 
 from setuptools import find_packages, setup
@@ -23,9 +21,10 @@ setup(
     packages=find_packages(exclude=['tests', 'tests.*']),
     zip_safe=False,
     include_package_data=True,
+    python_requires='>= 3.7',
     install_requires=[
         'setuptools',
-        'Mopidy >= 0.19',
+        'Mopidy >= 3.0',
         'Pykka >= 1.1',
     ],
     test_suite='nose.collector',
@@ -43,7 +42,7 @@ setup(
         'Intended Audience :: End Users/Desktop',
         'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 3',
         'Topic :: Multimedia :: Sound/Audio :: Players',
     ],
 )
