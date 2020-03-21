@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 import os
 
 from mopidy import config, ext
@@ -36,10 +34,10 @@ class PlaybackDefaultsFrontend(pykka.ThreadingActor):
         super(PlaybackDefaultsFrontend, self).__init__()
 
         if type(config[PlaybackDefaultsExtension.ext_name]['default_random']) is bool:
-            core.tracklist.random = config[PlaybackDefaultsExtension.ext_name]['default_random']
+            core.tracklist.set_random(config[PlaybackDefaultsExtension.ext_name]['default_random'])
         if type(config[PlaybackDefaultsExtension.ext_name]['default_repeat']) is bool:
-            core.tracklist.repeat = config[PlaybackDefaultsExtension.ext_name]['default_repeat']
+            core.tracklist.set_repeat(config[PlaybackDefaultsExtension.ext_name]['default_repeat'])
         if type(config[PlaybackDefaultsExtension.ext_name]['default_consume']) is bool:
-            core.tracklist.consume = config[PlaybackDefaultsExtension.ext_name]['default_consume']
+            core.tracklist.set_consume(config[PlaybackDefaultsExtension.ext_name]['default_consume'])
         if type(config[PlaybackDefaultsExtension.ext_name]['default_single']) is bool:
-            core.tracklist.single = config[PlaybackDefaultsExtension.ext_name]['default_single']
+            core.tracklist.set_single(config[PlaybackDefaultsExtension.ext_name]['default_single'])
